@@ -1,0 +1,36 @@
+            //set the spinner
+            Spinner spinner = (Spinner) findViewById(R.Id.spinner1);
+
+            //populate the spinner
+            var adapter = ArrayAdapter.CreateFromResource(
+                this, R.Array.optionsArray, R.Layout.spinnerItem);
+
+            //set the text area settings for the drop down list
+            adapter.SetDropDownViewResource(R.Layout.spinnerDropDownItem);
+            spinner.SetAdapter(adapter);
+            
+            
+            -------------------------------------------------------------------
+            
+            XML for spinnerItem
+            <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@android:id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif"
+                android:textColor="#ff0000" />
+                
+                
+            -------------------------------------------------------------------
+            
+            XML for spinnerDropDownItem
+            <CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@android:id/text1"
+                style="?android:attr/spinnerDropDownItemStyle" //not hugely necessary
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/listPreferredItemHeight"
+                android:ellipsize="marquee"
+                android:fontFamily="serif-monospace"
+                android:textColor="#aa66cc"/>
